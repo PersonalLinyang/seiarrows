@@ -1,0 +1,138 @@
+// body * {
+//   background: rgba(0,0,0,.2)!important;
+// }
+
+// section > * * * * *  {
+//   display: none!important;
+// }
+
+// サイトを構成する上で、デザインの基本の下地、土台となるスタイルを定義
+// ※基本的にタグ自体にスタイルを定義すること。
+// ※クラスなしの状態でも最低限の表示になることを心がける
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+  @include mq(tb) {
+    font-size: (16px*.8);
+  }
+  @include mq(sp) {
+    font-size: 16px;
+  }
+  }
+
+
+body {
+    font-family: $font_jp;
+    font-size: remPC(13);
+	  overflow-x: hidden;
+    font-feature-settings: 'palt';
+    background: #E3E1E0;
+    color: $color_text;
+    @include mq(sp) {
+      font-size: vw(13);
+    }
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    width: auto;
+    &[src$=".svg"] {
+        fill: currentColor;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.icon {
+  display: inline-block;
+}
+
+em {
+    font-style: normal;
+}
+
+li {
+    list-style-type: none;
+}
+
+table {
+  width: 100%;
+}
+th {
+  background: #EBF1F5;
+  text-align: center;
+}
+th,td {
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  padding: .5em;
+}
+
+ruby> rt {
+	font-size: remPC(10);
+}
+
+
+/* ローディング画面 */
+#loading {
+  // width: 100vw;
+  // height: 100vh;
+  // transition: all 1s;
+  // background-color: rgba(#fff,.7);
+
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // z-index: 9999;
+  &.loaded {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+  p {
+    display: none;
+  }
+}
+.spinner {
+  background: url(../img/common/loading.svg) top/contain no-repeat;
+  width: 32px;
+  height: 32px;
+  // height: 42px;
+  margin: auto;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+  // padding-top: 62px;
+  text-align: center;
+}
+/* ローディングアニメーション */
+@keyframes sk-scaleout {
+  0% {
+    opacity: 1;
+  } 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes out {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+
+  }
+}

@@ -1,0 +1,114 @@
+.t-page-section--group .sp{
+  display:block;
+}
+.flex-row .sp{
+  display:flex;
+}
+.spinsta{
+  display: none;
+}
+@media screen and (max-width:768px) {
+  .pcinsta{
+    display: none;
+  }
+  .spinsta{
+    display: flex;
+    flex-wrap:wrap;
+  }
+  .spinsta div{
+    width:33.3%;
+  }
+}
+.change-en-japan{
+  float:right;
+  text-align: right;
+  font-size: 1rem;
+  margin-top: -5px;
+}
+.change-en-japan .dis{
+  color:#ccc;
+}
+
+/* IE対策 */
+.p-companyTop--image__wrap__ttl span{
+  text-shadow: #333 1px 1px 3px, #333 -1px 1px 3px,
+#333 1px -1px 3px, #333 -1px -1px 3px;
+}
+.p-companyTop.en li,.p-companyTop.en p{
+  line-height: 1.4;
+}
+.p-nav__item{
+  a{
+    position: relative;
+    &::after{
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: #231815;
+      transform: scale(0, 1);
+      transform-origin: right top;
+      transition: transform .3s;
+    }
+    &:hover{
+      opacity: 1;
+      &::after{
+        transform-origin: left top;
+        transform: scale(1, 1);
+      }
+    }
+  }
+}
+.t-page-section--wrap{
+  transition:all .5s ease;
+  z-index:2;
+  position:relative;
+  overflow: hidden;
+  .t-page-section--wrap__item{
+    z-index: 10;
+  }
+  .eff{
+    width:100%;
+    height:100%;
+    // left:-100%;
+    opacity: 0;
+    background:rgba(#000,.2);
+    position:absolute;
+    transition:all .5s ease;
+    z-index:1;
+    opacity: .3;
+    }
+    &:hover{
+      .eff{
+        opacity: 1;
+      }
+      img{
+        transform: scale(1.01);
+        transition:all 1s ease;
+      }
+    }
+    img{
+      transition:all .5s ease;
+    }
+}
+.p-madeorderTop--section__itemgroup--imagegroup__item--ttl{
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 200;
+}
+.p-madeorderTop--section__itemgroup--imagegroup__item::before{
+
+}
+.p-worksDetail--wrap__imagegroup__item{
+  text-align: center;
+  img{
+    max-height:483px;
+  }
+}
+.p-worksDetail--sectionrecommend__imagegroup{
+  align-items: flex-start;
+}
+.p-worksTop--image__imagegroup{
+  align-items: flex-start;
+}

@@ -1,0 +1,34 @@
+// 各ページを構成する、ヘッダー、メインコンテンツエリア、サイドバー、フッターなどのスタイルをエリアごとに管理
+// ※ページ全体からみたレイアウトに対するスタイルを定義する
+// ※外枠のみ定義。子要素はなるべく入れない
+// ※ヘッダーやフッターの中身はp-で定義する
+
+// メインのコンテンツエリアの共通スタイルを定義
+// ※ヘッダーのfixed分の相殺や余白など
+// ※ここでは共通の上下左右の余白などのみの定義
+
+.l-main {
+
+
+}
+@mixin inner {
+  @include mq(sp) {
+    padding-left: vw(13);
+    padding-right: vw(13);
+    max-width: 95%;
+  }
+}
+
+.l-inner {
+  max-width: 1024px;
+  width: 100%;
+  @include center;
+  @include inner;
+
+}
+
+
+.l-sec {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}

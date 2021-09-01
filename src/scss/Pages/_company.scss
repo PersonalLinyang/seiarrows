@@ -1,0 +1,203 @@
+/* company */
+.p-companyTop {
+    &--image {
+        margin-top: -2.5rem;
+        &__wrap {
+           position: relative;
+           max-width: 100vw;
+           &__ttl {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                span {
+                    font-size: remPC(45.35);
+                    @include font_en;
+
+
+                    color: $color_white;
+                    text-shadow: 0 0 10px #00000099, 0 0 10px #000000df !important;
+                }
+            }
+        }
+
+    }
+    &--section {
+        margin-top: 4rem;
+        .l-inner {
+            max-width: 887px;
+            padding: 0 ;
+            @include mq(sp) {
+                max-width: 95%;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        &__topwrap {
+            text-align: center;
+            &--ttl {
+                &__hdg {
+                    @include font_en;
+
+                    font-size: remPC(29.76);
+                    font-weight: 700;
+                    margin-bottom: 1.5rem;
+                    letter-spacing: -0.019rem;
+                }
+                &__desc {
+                    font-family: $font_jp;
+                    font-size: remPC(10.63);
+                    font-weight: 200;
+                    line-height: 2.0;
+                    letter-spacing: .1rem;
+                }
+            }
+            &--item {
+                &__ttl {
+                    text-align: left;
+                    font-family: $font_jp;
+                    font-size: remPC(13.46);
+                    font-weight: 400;
+                    line-height: 1.0;
+                    letter-spacing: .1rem;
+                    margin-bottom: 1rem;
+                }
+                &__wrap {
+                    &__group {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        align-items: center;
+                        justify-content: flex-start;
+                        padding: 1rem 0;
+                        border-bottom: solid #595757 0.2835px;
+                        &:first-of-type {
+                            border-top: solid #595757 0.2835px;
+                        }
+                        &--ttl {
+                            max-width: 25%;
+                            width: 100%;
+                            text-align: left;
+                            font-family: $font_jp;
+                            font-size: remPC(10.63);
+                            font-weight: 400;
+                            line-height: 1.0;
+                            letter-spacing: .1rem;
+                        }
+                        &--content {
+                            max-width: 75%;
+                            width: 100%;
+                            text-align: left;
+                            font-family: $font_jp;
+                            font-size: remPC(10.63);
+                            font-weight: 200;
+                            line-height: 1.0;
+                            letter-spacing: .1rem;
+                        }
+                    }
+                }
+            }
+
+        }
+        &__itemgroup {
+            &--mainttl {
+                text-align: center;
+                @include font_en;
+
+                font-size: remPC(25.51);
+
+                letter-spacing: 0.025rem;
+                margin-bottom: 10px;
+                span {
+                    border-bottom: solid 0.5466px #000000;
+                }
+            }
+            &--item {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 40px 0;
+                border-bottom: solid #595757 0.2835px;
+                &:last-of-type {
+                    border-bottom: none;
+                }
+                @include mq(sp) {
+                    flex-flow: wrap;
+                }
+                &__left {
+                    max-width: 50%;
+                    width: 100%;
+                    @include mq(sp) {
+                        max-width: 100%;
+                        margin-bottom: 2rem;
+                    }
+                    &--ttl {
+                        text-align: left;
+                        font-family: $font_jp;
+                        font-size: remPC(13.46);
+                        font-weight: 400;
+                        line-height: 1.0;
+                        letter-spacing: .1rem;
+                        margin-bottom: 1rem;
+                    }
+                    &--item {
+                        li {
+                            text-align: left;
+                            font-family: $font_jp;
+                            font-size: remPC(10.63);
+                            font-weight: 200;
+                            line-height: 1.0;
+                            letter-spacing: .1rem;
+                            padding: 0.3rem 0;
+                        }
+                    }
+                    &--wrap {
+                        text-align: left;
+                            font-family: $font_jp;
+                            font-size: remPC(10.63);
+                            line-height: 1.0;
+                            letter-spacing: .1rem;
+                        h5 {
+                            font-weight: 400;
+                            margin-bottom: .6rem;
+                        }
+                        p {
+                            font-weight: 200;
+                            margin-bottom: .6rem;
+                        }
+                    }
+                    &--link {
+                        font-family: $font_jp;
+                        font-size: remPC(10.63);
+                        font-weight: 400;
+                        line-height: 1.0;
+                        letter-spacing: -0.0025rem;
+                        span {
+                            border-bottom: solid #595757 0.2835px;
+                        }
+                    }
+                }
+                &__right {
+                    max-width: 50%;
+                    width: 100%;
+                    @include mq(sp) {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+        &__readmorebtn {
+            a {
+                text-align: left;
+                font-family: $font_jp;
+                font-size: remPC(17.77);
+                font-weight: 200;
+                line-height: 1.0;
+                letter-spacing: -0.0025rem;
+                span {
+                    border-bottom: solid 0.5466px #000000;
+                }
+            }
+        }
+    }
+}

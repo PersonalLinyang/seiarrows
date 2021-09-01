@@ -1,0 +1,425 @@
+// 文字非表示（スクリーンリーダー用）
+.sr-only {
+  @include sr-only;
+}
+
+// スマホ非表示用
+.u-sp_none {
+    @include mq(sp) {
+        display: none !important;
+    }
+}
+
+// パソコン非表示用
+.u-pc_none {
+    @include mq(pc) {
+        display: none !important;
+    }
+}
+
+.u-flex {
+  display: flex;
+  @include mq(sp) {
+    flex-direction: column;
+  }
+  &.wrap {
+    flex-wrap: wrap;
+  }
+  &.center {
+    justify-content: center;
+  }
+  &.between {
+    justify-content: space-between;
+  }
+  &.a-center {
+    align-items: center;
+  }
+  &.column {
+    flex-direction: column;
+  }
+  [data-order="1"] {
+    order: 1;
+  }
+  [data-order="2"] {
+    order: 2;
+  }
+}
+
+.u-shrink {
+  flex-shrink: 0;
+}
+
+// .u-flex--sp_none {
+//   @include mq(sp) {
+//     flex-direction: column;
+//   }
+// }
+
+.u-width--full {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+// 線
+.u-bdt-bdb-gray {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+// 色
+
+.u-color-white {
+  color: $color_white;
+}
+
+.u-color-blue {
+  color: $color_dblue;
+}
+
+.u-color-red {
+  color: #E04E32;
+}
+
+.u-bg--01 {
+  background: #F4F5F7;
+}
+
+.u-bg--triangle {
+  position: relative;
+  background: #DEF2FF;
+  > * {
+    position: relative;
+  }
+  &::before {
+    @include icon_img(remPC(243),remPC(243),'../img/common/bg_triangle_lefttop.svg') {
+      position: absolute;
+      left: 0;
+      top: 0;
+      mix-blend-mode: multiply;
+      z-index: 0;
+    }
+  }
+}
+
+.u-bg--blue {
+  background: url(../img/index/bg_blue.jpg) no-repeat center/cover;
+  &03 {
+    background: url(../img/index/bg_blue_03.jpg) no-repeat center/cover;
+  }
+}
+
+.u-bg-rigaku {
+  background: $color_rigaku;
+}
+.u-bg-judo {
+  background: $color_judo;
+}
+.u-bg-sinkyu {
+  background: $color_sinkyu;
+}
+.u-bg-w-rigaku {
+  background: $color_w_rigaku;
+}
+.u-bg-w-sagyo {
+  background: $color_w_sagyo;
+}
+.u-bg-o-kaigo {
+  background: $color_o_kaigo;
+}
+.u-bg-o-bekka {
+  background: $color_o_bekka;
+}
+.u-bg-t-bekka {
+  background: $color_t_bekka;
+}
+
+// text
+
+.u-font-go {
+  font-family: $font_jp;
+}
+
+//位置
+.u-text-center {
+  text-align: center;
+}
+
+.u-sp-text-center {
+  @include mq(sp) {
+    text-align: center;
+  }
+}
+
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-m-center {
+  @include center;
+}
+.u-nowrap {
+  white-space: nowrap;
+}
+
+.u-ltsp-50{
+	span{
+		letter-spacing: 0.05em;
+	}
+}
+
+// font-weight: light
+.u-14-go-l {
+  font-family: $font_jp;
+  font-size: remPC(14);
+  line-height: (22/14);
+
+  letter-spacing: .05em;
+}
+
+// font-weight: Regular
+.u-14-go-r {
+  font-family: $font_jp;
+  font-size: remPC(14);
+  line-height: (22/14);
+  font-weight: 400;
+  letter-spacing: .05em;
+}
+
+// font-weight: light
+.u-15-go-l {
+  font-family: $font_jp;
+  font-size: remPC(15);
+  line-height: (25/15);
+
+  letter-spacing: .05em;
+}
+
+// font-weight: regular
+.u-15-go-r {
+  font-family: $font_jp;
+  font-size: remPC(15);
+  line-height: (25/15);
+  font-weight: 400;
+  letter-spacing: .05em;
+}
+
+.u-16-85-left {
+  span {
+    font-size: remPC(16);
+    @include text-narrow-left-85;
+    line-height: 2;
+  }
+}
+.u-18-85-left {
+  span {
+    font-size: remPC(18);
+    @include text-narrow-left-85;
+    line-height: (30/18);
+  }
+}
+
+.u-20-85-left {
+  span {
+    font-size: remPC(20);
+    @include text-narrow-left-85;
+    line-height: (32/24);
+  }
+}
+.u-21-85-left {
+  span {
+    font-size: remPC(21);
+    @include text-narrow-left-85;
+    line-height: (32/24);
+  }
+}
+
+.u-22-85-center {
+  span {
+    font-size: remPC(22);
+    @include text-narrow-center-85;
+    line-height: (32/24);
+  }
+}
+
+.u-22-85-left {
+  span {
+    font-size: remPC(22);
+    @include text-narrow-left-85;
+    line-height: (32/24);
+  }
+}
+
+.u-24-85-left {
+  span {
+    font-size: remPC(24);
+    @include text-narrow-left-85;
+    line-height: (32/24);
+  }
+}
+.u-24-85-center {
+  span {
+    font-size: remPC(24);
+    @include text-narrow-center-85;
+    line-height: (32/24);
+  }
+}
+
+.u-28-85-left {
+  span {
+    font-size: remPC(28);
+    @include text-narrow-left-85;
+    line-height: (40/28);
+  }
+}
+
+// icon
+.u-icon-code-r {
+  &::after {
+    @include icon_img(22px,27px,'../img/icon/icon_code_w.svg') {
+      position: relative;
+  }
+}
+}
+
+.u-bdr_none {
+  border-right: none;
+}
+
+.u-bdl_none {
+  border-left: none;
+}
+
+
+// margin-top:0px ~ margin-top:100px
+@for $i from 0 through 100 {
+    .u-mt#{$i * 5} {
+      margin-top:#{$i * 5}px;
+      @include mq(sp) {
+        margin-top: #{$i * vw(2.5)};
+        }
+    }
+
+    .u-mt-#{$i * 5} {
+      @include mq(pc) {
+        margin-top: #{$i * -5}px;
+        }
+    }
+
+    @include mq(sp) {
+        .u-sp-mt#{$i * 5} {
+            margin-top: #{$i * vw(5)};
+        }
+    }
+}
+// margin-bottom:0px ~ margin-bottom:100px
+@for $i from 0 through 100 {
+    .u-mb#{$i * 5} {
+      margin-bottom:#{$i * 5}px;
+      @include mq(sp) {
+        margin-bottom: #{$i * vw(2.5)};
+        }
+    }
+    @include mq(sp) {
+        .u-sp-mb#{$i * 5} {
+            margin-bottom: #{$i * vw(5)};
+        }
+    }
+}
+// margin-left:0px ~ margin-left:100px
+@for $i from 0 through 100 {
+    .u-ml#{$i * 5} {
+      margin-left:#{$i * 5}px;
+      @include mq(sp) {
+        margin-left: #{$i * vw(2.5)};
+    }
+    }
+    @include mq(sp) {
+        .u-sp-ml#{$i * 5} {
+            margin-left: #{$i * vw(5)};
+        }
+    }
+}
+// margin-right:0px ~ margin-right:100px
+@for $i from 0 through 100 {
+    .u-mr#{$i * 5} {
+      margin-right:#{$i * 5}px;
+      @include mq(sp) {
+        margin-right: #{$i * vw(2.5)};
+    }
+    }
+    @include mq(sp) {
+        .u-sp-mr#{$i * 5} {
+            margin-right: #{$i * vw(5)};
+        }
+    }
+}
+
+// padding
+
+// padding-top:0px ~ padding-top:100px
+@for $i from 0 through 100 {
+    .u-pt#{$i * 5} {
+        padding-top:#{$i * 5}px;
+        @include mq(sp) {
+            padding-top: #{$i * vw(2.5)};
+        }
+    }
+    @include mq(sp) {
+        .u-sp-pt#{$i * 5} {
+            padding-top: #{$i * vw(5)};
+        }
+    }
+}
+
+// padding-bottom:0px ~ padding-bottom:100px
+@for $i from 0 through 100 {
+    .u-pb#{$i * 5} {
+      padding-bottom:#{$i * 5}px;
+      @include mq(sp) {
+        padding-bottom: #{$i * vw(2.5)};
+    }
+    }
+    @include mq(sp) {
+        .u-sp-pb#{$i * 5} {
+            padding-bottom: #{$i * vw(5)};
+        }
+    }
+}
+
+// 基本的に表用
+// width 7%〜50%
+@for $i from 7 through 50 {
+  .u-w#{$i * 1}p {
+    width:#{$i * 1%};
+    // @include mq(sp) {
+    //   margin-bottom: #{$i * vw(2.5)};
+    //   }
+  }
+  // @include mq(sp) {
+  //     .u-sp-mb#{$i * 5} {
+  //         margin-bottom: #{$i * vw(5)};
+  //     }
+  // }
+}
+
+
+.js-scrollAnimation {
+  display: inline-block;
+  transform: translateY(40%);
+  opacity: 0;
+  &.visible {
+    animation: ease-in 1.3s .1s forwards slideUp;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,79 @@
+/* news-recruit */
+
+/* top */
+.p-privacyTop {
+    margin-bottom: 5rem;
+    .l-inner {
+        max-width: 887px;
+        @include mq(sp) {
+            max-width: 95%;
+        }
+    }
+    &--item {
+        padding: 0 20px;
+        &__top {
+            font-family: $font_jp;
+            line-height: 1.0;
+            letter-spacing: 0.05rem;
+            text-align: left;
+            margin-bottom: 2rem;
+            &--ttl {
+                font-weight: 500;
+                font-size: remPC(14);
+                span {
+                    display: inline-block;
+                    margin: .5rem 0;
+                }
+            }
+            p {
+                font-weight: 300;
+                font-size: remPC(11);
+                line-height: 2.0;
+                @include mq(sp) {
+                  font-size: 12px;
+                }
+            }
+        }
+        &__wrap {
+            font-family: $font_jp;
+            line-height: 1.0;
+            letter-spacing: 0.05rem;
+            text-align: left;
+            margin-bottom: 2rem;
+            &--mainttl {
+                font-weight: 500;
+                font-size: remPC(12);
+                margin-bottom: .7rem;
+            }
+            &--ttl {
+                font-weight: 400;
+                font-size: remPC(11);
+                margin-bottom: .3rem;
+                @include mq(sp) {
+                  font-size: 12px;
+                }
+            }
+            p {
+                font-weight: 300;
+                font-size: remPC(11);
+                line-height: 2.0;
+                @include mq(sp) {
+                  font-size: 12px;
+                }
+            }
+        }
+    }
+    .border-bottom {
+        border-bottom: solid #595757 0.2835px;
+    }
+    .u-mt7 {
+        margin-top: 7px;
+    }
+
+}
+.pc {
+    display: block;
+    @include mq(sp) {
+        display: none;
+    }
+}

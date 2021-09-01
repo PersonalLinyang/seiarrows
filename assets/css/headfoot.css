@@ -1,0 +1,29 @@
+.p-nav {
+  position: relative; }
+
+.online-shop {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+  padding: 0 10px; }
+  @media screen and (max-width: 768px) {
+    .online-shop {
+      top: -32px;
+      width: 108px; } }
+
+.catalog-dwl {
+  width: 160px;
+  margin-top: 100px; }
+  .catalog-dwl a {
+    display: inline-block;
+    padding: 0 10px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    font-size: .8rem;
+    font-weight: 400; }
+  @media screen and (max-width: 768px) {
+    .catalog-dwl {
+      margin-top: 30px; } }
+/*# sourceMappingURL=headfoot.css.map */

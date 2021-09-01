@@ -1,0 +1,89 @@
+// 各ページを構成する、ヘッダー、メインコンテンツエリア、サイドバー、フッターなどのスタイルをエリアごとに管理
+// ※ページ全体からみたレイアウトに対するスタイルを定義する
+// ※外枠のみ定義。子要素はなるべく入れない
+// ※ヘッダーやフッターの中身はp-で定義する
+
+.l-footer {
+}
+.p-footer {
+  color: $color_white;
+  @include font_en;
+
+
+  letter-spacing: .03em;
+
+  &__bg {
+    background: #8E8A87;
+  }
+  &--social {
+    width: 100%;
+    padding: 48px 0 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li {
+      padding: 0 15px;
+    }
+  }
+  &Nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 860px;
+    @include center;
+    @include mq(sp) {
+      flex-flow: wrap;
+      justify-content: flex-start;
+    }
+    &__list {
+
+      max-width: 100px;
+      white-space: nowrap;
+      @include mq(sp) {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 2rem;
+      }
+      > li {
+        font-size: 15.4843px;
+        a {
+          display: block;
+          margin-bottom: 1.2em;
+        }
+        li {
+          a {
+            font-size: 11.4449px;
+            margin-bottom: .8em;
+          }
+        }
+      }
+    }
+  }
+  .catalog-dwl a {
+    border-left: none;
+    border-right: none;
+    position: relative;
+    display: inline-block;
+    @include mq(sp) {
+      margin-left: 10px;
+    }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background: #fff;
+      width: 1px;
+
+    }
+    &::before {
+      left: -10px;
+
+    }
+    &::after {
+      right: -10px;
+    }
+  }
+}
+

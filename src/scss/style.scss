@@ -1,0 +1,58 @@
+// FLOCSS
+// https://qiita.com/super-mana-chan/items/644c6827be954c8db2c0
+
+// Foundation
+
+@import "Foundation/reset";
+@import "Foundation/variable";
+@import "Foundation/mixin";
+@import "Foundation/base";
+@import "Foundation/animation";
+
+// Layout
+
+@import "Layout/l-header";
+@import "Layout/l-main";
+@import "Layout/l-footer";
+
+// Object
+// サイト全体における、繰り返されるビジュアルパターンをすべてObjectと定義。
+// - Component
+@import "Object/Component/component";
+@import "Object/Component/c-title";
+@import "Object/Component/c-button";
+
+// - Project
+// 小さい単位のComponentを集めて、一つのObjectとして扱いたい時
+// Componentとするには大きすぎるObjectとなる時
+@import "Object/Project/p-project";
+
+
+
+//vendor
+// *独自
+//外部読み込みスクリプトのCSS上書きなど
+@import "Vendor/vendor";
+
+
+// Pages
+// ＊独自
+@import "Pages/pages";
+@import "Pages/index";
+@import "Pages/product";
+@import "Pages/contact";
+@import "Pages/company";
+@import "Pages/works";
+@import "Pages/featured";
+@import "Pages/company";
+@import "Pages/made-order";
+@import "Pages/news-recruit";
+@import "Pages/privacy-guarantee";
+@import "Pages/showroom";
+
+@import "add";
+
+// - Utility
+@import "Object/Utility/u-utility"
+
+// sass --watch src/scss/style.scss:assets/css/style.css --style expanded --no-cache

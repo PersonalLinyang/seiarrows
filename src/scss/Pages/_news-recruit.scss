@@ -1,0 +1,124 @@
+/* news-recruit */
+
+/* top */
+.p-pageTop {
+    margin-bottom: 4rem;
+    .l-inner {
+        max-width: 940px;
+        @include mq(sp) {
+            max-width: 95%;
+        }
+    }
+    &--ttl {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        &__hdg {
+            @include font_en;
+
+
+            font-size: remPC(41.1);
+            line-height: 2;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    }
+    &--wrap {
+        max-width: 888px;
+        @include center;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0 20px;
+        @include mq(sp) {
+           flex-flow: row wrap;
+        }
+        &__leftwrap {
+            max-width: 338px;
+            width: 100%;
+            @include mq(sp) {
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+            &--ttl {
+                font-family: $font_jp;
+                font-weight: 400;
+                font-size: remPC(17);
+                line-height: 1.0;
+                margin-bottom: 0.5rem;
+                letter-spacing: 0.025rem;
+                text-align: left;
+                &.news_padding_top {
+                    line-height: 1.5;
+                    padding-top: 5px;
+                }
+            }
+            &--date {
+                display: inline-block;
+                font-size: remPC(14);
+                letter-spacing: 0.0025rem;
+                font-weight: 300;
+            }
+        }
+        &__rightwrap {
+            max-width: 602px;
+            width: 100%;
+            @include mq(sp) {
+                max-width: 100%;
+            }
+            &--item {
+                margin-bottom: 3rem;
+                &__ttl {
+                    font-weight: 400;
+                    font-size: remPC(12);
+                    line-height: 1.0;
+                    margin-bottom: 0.5rem;
+                    letter-spacing: 0.025rem;
+                    text-align: left;
+                }
+                &__desc {
+                    font-weight: 200;
+                    font-size: remPC(12);
+                    line-height: 2.0;
+                    letter-spacing: 0.025rem;
+                    text-align: left;
+                    vertical-align: top;
+                    &__period {
+                        display: inline-block;
+                        margin: 1.5rem 0;
+                    }
+                    &__order {
+                        display: inline-block;
+                        margin-bottom: 1.5rem;
+                    }
+                    &__image {
+                        display: block;
+                        margin-top: 1.5rem;
+                        max-width: 212px;
+                        height: auto;
+                    }
+                }
+            }
+        }
+        &.news_border {
+            margin-top: 3rem;
+            border-bottom: solid #595757 0.2835px;
+            padding: 0 20px;
+            &:first-of-type {
+                margin-top: 1rem;
+            }
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+    }
+
+}
+.pc {
+    display: block;
+    @include mq(sp) {
+        display: none;
+    }
+}

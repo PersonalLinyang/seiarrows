@@ -1,0 +1,188 @@
+/* Top page */
+.top-pageTitle {
+    @include mq(sp) {
+        .l-inner {
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+    @include center;
+    color: $color_black;
+    text-align: center;
+    &__item {
+        display: inline-block;
+        @include font_en;
+
+        font-size: remPC(50.31);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.19rem;
+    }
+    &__desc {
+        font-family: $font_jp;
+        font-size: remPC(10.63);
+        font-weight: 200;
+        line-height: 2.0;
+        letter-spacing: .1rem;
+    }
+
+}
+.t-page {
+    @include mq(sp) {
+        .sp {
+            overflow: hidden;
+            height: 40vw;
+            width: 100%;
+        }
+    }
+    .l-inner {
+        max-width: 900px;
+        @include mq(sp) {
+            max-width: 95%;
+        }
+    }
+    &--slider {
+        &__wrap {
+           max-width: 900px;
+           @include mq(sp) {
+            max-width: 95vw;
+           }
+        }
+        .slick-dots {
+            bottom: 20px;
+        }
+        .slick-dots li {
+            margin: 0;
+        }
+        .slick-dots li button {
+            padding: 0;
+        }
+        .slick-dots li button:before {
+            width: 20px;
+            height: 20px;
+            content: '\25EF';
+            font-size: 11.2px;
+            text-align: center;
+            opacity: 1;
+            color: #9FA0A0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .slick-dots li.slick-active button:before {
+            content: '\002B24';
+            font-size: 12.5px;
+            top: -1.5px;
+            opacity: 1;
+        }
+    }
+    &-section {
+        margin-top: 4rem;
+        .l-inner {
+            max-width: 100%;
+            padding: 0;
+        }
+        &--wrap {
+            width: 100%;
+            position: relative;
+            &__item {
+                position: absolute;
+                top: 52%;
+                transform: translateY(-50%);
+                left: 5rem;
+                &_ttl {
+                    font-size: remPC(41.1);
+                    @include font_en;
+
+
+                    color: $color_white;
+                    margin-bottom: 1rem;
+
+                }
+                &_readmorebtn {
+                    font-size: remPC(17.77);
+                    @include font_en;
+
+
+                    color: $color_white;
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+        .text-shadow {
+            text-shadow: 0 0 10px #00000099, 0 0 10px #000000df;
+        }
+        &--group {
+            display: flex;
+            width: 100%;
+            position: relative;
+            flex-flow: row nowrap;
+            .left-image {
+                max-width: 66.6666%;
+            }
+            .right-image {
+                max-width: 33.3334%;
+            }
+            .news-item {
+                left: 3.5rem;
+            }
+            @include mq(sp) {
+                flex-flow: wrap;
+                .left-image {
+                    max-width: 100%;
+                }
+                .right-image {
+                    max-width: 100%;
+                }
+                .news-item {
+                    left: 5rem;
+                }
+            }
+        }
+    }
+}
+.flex-row {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    @include mq(sp) {
+        flex-flow: wrap;
+    }
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.flex_column3 {
+    max-width: 33.3333%;
+    @include mq(sp) {
+        max-width: 100%;
+    }
+}
+.flex_column2 {
+    max-width: 50%;
+}
+.insta_ttl {
+    display: flex;
+    flex-direction: column;
+    width: 33.3333%;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 5rem;
+    @include font_en;
+
+    font-size: remPC(36.14);
+    color: $color_black;
+
+    .flex-ttl {
+      margin-bottom: 2rem;
+    }
+    .t-page-section--wrap__item_readmorebtn {
+      color: inherit;
+    }
+
+    @include mq(sp) {
+        padding-left: 5rem;
+    }
+}
