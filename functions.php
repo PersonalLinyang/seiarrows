@@ -215,7 +215,9 @@ function func_get_product_list(){
 		$sql .= "AND (t_series.name LIKE '" . $_GET['first_letter'] . "%' OR t_series.name LIKE '" . $_GET['first_letter'] . "%') ";
 	}
 	if(in_array('key_word', array_keys($_GET))) {
-		$sql .= "AND (wp.post_name LIKE '%" . $_GET['key_word'] . "%' OR t_series.name LIKE '%" . $_GET['key_word'] . "%') ";
+		$sql .= "AND (wp.post_name LIKE '%" . $_GET['key_word'] . "%' ";
+		$sql .= "OR t_series.name LIKE '%" . $_GET['key_word'] . "%' ";
+		$sql .= "OR t_series.term_id in (SELECT term_id FROM wp_termmeta WHERE meta_value LIKE '%" . $_GET['key_word'] . "%' and meta_key = 'hiragana')) ";
 	}
 	if(in_array('product_category', array_keys($_GET))) {
 		$sql .= "AND t_category.term_id = " . $_GET['product_category'] . " ";

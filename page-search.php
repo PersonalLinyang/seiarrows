@@ -77,11 +77,14 @@ if($keyword) {
 	// シリーズ詳細
 	$sql_series_detail = "SELECT t_title.* FROM ";
 	$sql_series_detail .= "(SELECT wt.name url, ";
-	$sql_series_detail .= "CONCAT(wt.name, '　シリーズ紹介') title ";
+	$sql_series_detail .= "CONCAT(wt.name, '　シリーズ紹介') title, ";
+	$sql_series_detail .= "wtm.meta_value hiragana ";
 	$sql_series_detail .= "FROM wp_terms wt ";
 	$sql_series_detail .= "LEFT JOIN wp_term_taxonomy wtt ON wt.term_id = wtt.term_id ";
+	$sql_series_detail .= "LEFT JOIN (SELECT term_id, meta_value FROM wp_termmeta WHERE meta_key='hiragana') wtm ON wt.term_id = wtm.term_id ";
 	$sql_series_detail .= "WHERE wtt.taxonomy = 'series' AND count > 0) t_title ";
-	$sql_series_detail .= "WHERE t_title.title LIKE '%" . $keyword . "%';";
+	$sql_series_detail .= "WHERE t_title.title LIKE '%" . $keyword . "%' ";
+	$sql_series_detail .= "OR t_title.hiragana LIKE '%" . $keyword . "%';";
 	$result_series_detail = $wpdb->get_results( $wpdb->prepare($sql_series_detail) );
 	if(is_array($result_series_detail)) {
 		if(count($result_series_detail)) {
@@ -99,17 +102,20 @@ if($keyword) {
 	// 製品詳細
 	$sql_product_detail = "SELECT t_title.* FROM ";
 	$sql_product_detail .= "(SELECT wp.post_name url, ";
-	$sql_product_detail .= "CONCAT(t_series.name, '　', t_jn.meta_value, '　', wp.post_name) title ";
+	$sql_product_detail .= "CONCAT(t_series.name, '　', t_jn.meta_value, '　', wp.post_name) title, ";
+	$sql_product_detail .= "t_series.hiragana series_hiragana ";
 	$sql_product_detail .= "FROM wp_posts wp ";
 	$sql_product_detail .= "LEFT JOIN ";
-	$sql_product_detail .= "(SELECT wtr.object_id, wt.name ";
+	$sql_product_detail .= "(SELECT wtr.object_id, wt.name, wtm.meta_value hiragana ";
 	$sql_product_detail .= "FROM wp_term_relationships wtr ";
 	$sql_product_detail .= "LEFT JOIN wp_term_taxonomy wtt ON wtr.term_taxonomy_id = wtt.term_taxonomy_id ";
 	$sql_product_detail .= "LEFT JOIN wp_terms wt ON wtt.term_id = wt.term_id ";
+	$sql_product_detail .= "LEFT JOIN (SELECT term_id, meta_value FROM wp_termmeta WHERE meta_key='hiragana') wtm ON wt.term_id = wtm.term_id ";
 	$sql_product_detail .= "WHERE wtt.taxonomy = 'series') t_series ON wp.ID = t_series.object_id ";
 	$sql_product_detail .= "LEFT JOIN (SELECT post_id, meta_value FROM wp_postmeta WHERE meta_key = 'japanese_name') t_jn ON wp.ID = t_jn.post_id ";
 	$sql_product_detail .= "WHERE wp.post_type='product' AND wp.post_status='publish') t_title ";
-	$sql_product_detail .= "WHERE t_title.title LIKE '%" . $keyword . "%';"; 
+	$sql_product_detail .= "WHERE t_title.title LIKE '%" . $keyword . "%' "; 
+	$sql_product_detail .= "OR t_title.series_hiragana LIKE '%" . $keyword . "%';"; 
 	$result_product_detail = $wpdb->get_results( $wpdb->prepare($sql_product_detail) );
 	if(is_array($result_product_detail)) {
 		if(count($result_product_detail)) {
